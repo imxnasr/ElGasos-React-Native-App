@@ -6,19 +6,19 @@ import { faHome, faMinus, faPlay, faPlus } from '@fortawesome/free-solid-svg-ico
 import { color } from '../utils/constants';
 import { Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { places } from '../utils/data';
 
 const StartScreen = () => {
   const {navigate} = useNavigation();
   const [persons, setPersons] = useState(3);
   const [spies, setSpies] = useState(1);
-  const [spyNumber, setSpyNumber] = useState(0);
   const startGame = () => {
     let safePersons = [...Array(persons + 1).keys()].slice(1);
     for(let i = 1; i <= spies; i++){
       safePersons.splice(Math.floor(Math.random() * 100 % safePersons.length), 1);
     }
-    console.log(safePersons);
-    // navigate('Game');
+    let thing = places[Math.floor(Math.random() * 100 % places.length)];
+    navigate('ShowMe', {persons, safePersons, thing, number: 1});
   }
   return (
     <Screen>

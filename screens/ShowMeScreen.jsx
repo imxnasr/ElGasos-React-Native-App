@@ -1,14 +1,15 @@
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import React from 'react';
 import styled from 'styled-components';
 import { color } from '../utils/constants';
 
 const ShowMeScreen = () => {
   const {navigate} = useNavigation();
+  const {persons, safePersons, thing, number} = useRoute().params;
   return (
     <Screen>
-      <Title>صفحة ملهاش لازمة 🙂</Title>
-      <Button onPress={() => navigate('Player')}>
+      <Title>اللاعب {number}</Title>
+      <Button onPress={() => navigate('Player', {persons, safePersons, thing, number})}>
         <Text>وريني</Text>
       </Button>
     </Screen>
