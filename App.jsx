@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { bgColor } from './utils/constants';
-import { GameScreen, HomeScreen, StartScreen } from './screens';
+import { PlayerScreen, HomeScreen, StartScreen, ShowMeScreen } from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +21,8 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown: false, animation: 'none'}}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Start" component={StartScreen} />
-        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="ShowMe" component={ShowMeScreen} />
+        <Stack.Screen name="Player" component={PlayerScreen} />
       </Stack.Navigator>
       <StatusBar backgroundColor={bgColor} />
     </NavigationContainer>

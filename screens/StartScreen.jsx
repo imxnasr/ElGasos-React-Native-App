@@ -11,6 +11,15 @@ const StartScreen = () => {
   const {navigate} = useNavigation();
   const [persons, setPersons] = useState(3);
   const [spies, setSpies] = useState(1);
+  const [spyNumber, setSpyNumber] = useState(0);
+  const startGame = () => {
+    let safePersons = [...Array(persons + 1).keys()].slice(1);
+    for(let i = 1; i <= spies; i++){
+      safePersons.splice(Math.floor(Math.random() * 100 % safePersons.length), 1);
+    }
+    console.log(safePersons);
+    // navigate('Game');
+  }
   return (
     <Screen>
       <Pressable onPress={() => navigate('Home')}>
@@ -48,7 +57,7 @@ const StartScreen = () => {
         </Buttons>
       </Setting>
 
-      <Pressable onPress={() => navigate('Game')} style={{alignSelf: 'center', marginTop: 50}}>
+      <Pressable onPress={startGame} style={{alignSelf: 'center', marginTop: 50}}>
         <FontAwesomeIcon icon={faPlay} size={50} color={color} />
       </Pressable>
     </Screen>
