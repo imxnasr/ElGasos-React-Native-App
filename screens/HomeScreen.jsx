@@ -9,7 +9,7 @@ const HomeScreen = () => {
   return (
     <Screen>
       <Title>الجاسوس</Title>
-      <Logo scale={200} />
+      <Logo size={200} />
       <Play onPress={() => navigate('Start')}>
         <PlayText>العب</PlayText>
       </Play>

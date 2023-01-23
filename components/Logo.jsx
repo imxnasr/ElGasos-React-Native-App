@@ -1,9 +1,9 @@
 import React from 'react';
 import { G, Path, Svg } from 'react-native-svg';
 
-const Logo = ({scale = 120, style = {}}) => {
+const Logo = ({size = 120, style = {}}) => {
   return (
-    <Svg style={style} fill="#ddd" version="1.1" id="_x32_" width={scale} height={scale} viewBox="0 0 512 512">
+    <Svg style={style} fill="#ddd" version="1.1" id="_x32_" width={size} height={size} viewBox="0 0 512 512">
     <G>
       <Path class="st0" d="M192.454,219.125c28.047,8.734,35.953-22.688,35.953-22.688c-17.203-1.156-56.281-16.406-56.281-16.406
         S168.61,211.688,192.454,219.125z"/>
