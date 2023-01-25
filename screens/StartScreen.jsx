@@ -6,7 +6,7 @@ import { faHome, faMinus, faPlay, faPlus } from '@fortawesome/free-solid-svg-ico
 import { color } from '../utils/constants';
 import { Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { places } from '../utils/data';
+import { lists } from '../utils/data';
 
 const StartScreen = () => {
   const {navigate} = useNavigation();
@@ -17,7 +17,9 @@ const StartScreen = () => {
     for(let i = 1; i <= spies; i++){
       safePersons.splice(Math.floor(Math.random() * 100 % safePersons.length), 1);
     }
-    let thing = places[Math.floor(Math.random() * 100 % places.length)];
+    console.log(lists[0].objects.length)
+    let thing = lists[0].objects[Math.floor(Math.random() * 100 % lists[0].objects.length)];
+    console.log(thing);
     navigate('ShowMe', {persons, safePersons, thing, number: 1});
   }
   return (

@@ -10,9 +10,14 @@ const HomeScreen = () => {
     <Screen>
       <Title>الجاسوس</Title>
       <Logo size={200} />
-      <Play onPress={() => navigate('Start')}>
-        <PlayText>العب</PlayText>
-      </Play>
+      <Buttons>
+        <Button onPress={() => navigate('Start')}>
+          <ButtonText>العب</ButtonText>
+        </Button>
+        <Button onPress={() => navigate('Lists')} style={{marginTop: 10}}>
+          <ButtonText>القوائم</ButtonText>
+        </Button>
+      </Buttons>
     </Screen>
   )
 }
@@ -29,14 +34,17 @@ const Title = styled.Text`
   color: ${color};
   font-size: 40px;
   font-family: 'Tajawal-Bold';
-  `;
-const Play = styled.Pressable`
+`;
+const Buttons = styled.View`
+  width: 100%;
+`;
+const Button = styled.Pressable`
   width: 100%;
   background-color: #fff9;
   border-radius: 200px;
   padding: 20px 20px;
 `;
-const PlayText = styled.Text`
+const ButtonText = styled.Text`
   color: ${color};
   text-align: center;
   font-size: 25px;
